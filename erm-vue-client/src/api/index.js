@@ -24,7 +24,7 @@ function checkLogin(){
 }
 
 function deleteDepart(departmentId){
-	return http.get("/department/delete", {
+	return http.delete("/department/list", {
 		params: {
 			departmentId
 		}
@@ -32,7 +32,7 @@ function deleteDepart(departmentId){
 }
 
 function deleteJob(jobId){
-	return http.get("/job/delete", {
+	return http.delete("/job/list", {
 		params: {
 			jobId
 		}
@@ -40,7 +40,7 @@ function deleteJob(jobId){
 }
 
 function deleteUser(userId){
-	return http.get("/user/delete", {
+	return http.delete("/user/list", {
 		params: {
 			userId
 		}
@@ -48,7 +48,7 @@ function deleteUser(userId){
 }
 
 function updateDepart(departmentId,name,desc){
-	return http.post("/department/update", {
+	return http.put("/department/info", {
 		departmentId,
 		name,
 		desc
@@ -56,7 +56,7 @@ function updateDepart(departmentId,name,desc){
 }
 
 function updateJob(jobId,name,desc,power){
-	return http.post("/job/update", {
+	return http.put("/job/info", {
 		jobId,
 		name,
 		desc,
@@ -65,7 +65,7 @@ function updateJob(jobId,name,desc,power){
 }
 
 function updateUser(userId,name,sex, email, phone, departmentId, jobId, desc){
-	return http.post("/user/update", {
+	return http.put("/user/info", {
 		userId,
 		name,
 		sex,
@@ -78,14 +78,14 @@ function updateUser(userId,name,sex, email, phone, departmentId, jobId, desc){
 }
 
 function addDepart(departmentId,name,desc){
-	return http.post("/department/add", {
+	return http.post("/department/list", {
 		name,
 		desc
 	});
 }
 
 function addJob(id, name,desc,power){
-	return http.post("/job/add", {
+	return http.post("/job/list", {
 		name,
 		desc,
 		power
@@ -93,7 +93,7 @@ function addJob(id, name,desc,power){
 }
 
 function addUser(userId,name,sex, email, phone, departmentId, jobId, desc){
-	return http.post("/user/add", {
+	return http.post("/user/list", {
 		name,
 		sex,
 		email,

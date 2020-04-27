@@ -132,7 +132,7 @@ route.get('/info', (req, res) => {
 });
 
 //=>增加用户信息
-route.post('/add', (req, res) => {
+route.post('/list', (req, res) => {
 	let $userDATA = req.$userDATA,
 		passDATA = null;
 	passDATA = Object.assign({
@@ -157,7 +157,7 @@ route.post('/add', (req, res) => {
 });
 
 //=>修改用户信息
-route.post('/update', (req, res) => {
+route.put('/info', (req, res) => {
 	req.body = req.body || {};
 	let $userDATA = req.$userDATA,
 		userId = req.body.userId,
@@ -185,7 +185,7 @@ route.post('/update', (req, res) => {
 });
 
 //=>删除用户信息
-route.get('/delete', (req, res) => {
+route.delete('/list', (req, res) => {
 	let $userDATA = req.$userDATA;
 	let {
 		userId = 0
@@ -202,7 +202,7 @@ route.get('/delete', (req, res) => {
 });
 
 //=>修改（重置）用户密码
-route.post('/resetpassword', (req, res) => {
+route.put('/password', (req, res) => {
 	let $userDATA = req.$userDATA;
 	let {
 		userId = 0,

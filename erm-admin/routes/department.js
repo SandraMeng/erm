@@ -54,7 +54,7 @@ route.get('/info', (req, res) => {
 });
 
 //=>增加新部门
-route.post('/add', (req, res) => {
+route.post('/list', (req, res) => {
 	let $departmentDATA = req.$departmentDATA,
 		passDATA = null;
 	passDATA = Object.assign({
@@ -73,7 +73,7 @@ route.post('/add', (req, res) => {
 });
 
 //=>修改部门信息
-route.post('/update', (req, res) => {
+route.put('/info', (req, res) => {
 	req.body = req.body || {};
 	let $departmentDATA = req.$departmentDATA,
 		departmentId = req.body.departmentId,
@@ -101,7 +101,7 @@ route.post('/update', (req, res) => {
 });
 
 //=>删除部门信息
-route.get('/delete', (req, res) => {
+route.delete('/list', (req, res) => {
 	let $departmentDATA = req.$departmentDATA;
 	let {
 		departmentId = 0
