@@ -38,12 +38,12 @@
 	    		if (typeof val == "string"){
 	    			let arr = val.split("|");
 		    		let obj = {
-		    			"userhandle": "用户操作权",
-		    			"departhandle": "部门操作权",
-		    			"jobhandle": "职务操作权",
+		    			"userhandle": "用户操作",
+		    			"departhandle": "部门操作",
+		    			"jobhandle": "职务操作",
 		    			"resetpassword": "重置密码"
 		    		};
-		    		return arr.map(item=>obj[item]).join(",").replace(/^,/, '');
+		    		return arr.map(item=>obj[item]).join("，").replace(/^，/, '');
 	    		}
 	    	}
 	    },

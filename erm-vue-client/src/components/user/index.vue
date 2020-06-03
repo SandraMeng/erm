@@ -2,7 +2,7 @@
 	<div>
 		<el-form ref="form" label-width="80px">
 		    <el-select v-model="department" placeholder="部门" @change="searchDep">
-		    	<el-option>不限</el-option>
+		    	<el-option value="不限">不限</el-option>
 		        <el-option v-model="item.name" v-for="(item, index) in departList" :key="index"></el-option>
 		    </el-select>
 		    <el-input type="search" style="width: 180px" placeholder="输入姓名、电话或邮箱" @change="search" @input="len" v-model="input"></el-input>
