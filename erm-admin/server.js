@@ -1,15 +1,17 @@
 const CONFIG = require('./config'),
+	  express = require('express'),
+	  app = express(),
 	  session = require('express-session'),
-	  bodyParser = require('body-parser');
-
-/*-CREATE SERVER-*/
-const express = require('express'),
-	  app = express();
+	  bodyParser = require('body-parser'),
+	  compression = require('compression');
+	  
+/*-LISTEN TO　THE CONFIG PORT-*/
 app.listen(CONFIG.PORT, () => {
-	console.log(`当前服务 起于${CONFIG.PORT}端口`);
+	console.log(`当前服务起于 ${CONFIG.PORT} 端口`);
 });
 
 /*-MIDDLE WARE-*/
+app.use(compression());
 app.use((req, res, next) => {
 	const {
 		ALLOW_ORIGIN,
